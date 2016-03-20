@@ -14,6 +14,8 @@ For the following challenges you are going to use a provided data template.
 
 0. As a warmup, try to log the following values:
     * the name of the course
+  	* the full array of students
+  	* all of the first student's information
     * the first student's id and full name
     * the number of students in the class
     * a list of GitHub usernames
