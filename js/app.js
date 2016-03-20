@@ -6,6 +6,12 @@ $(document).ready(function(){
   // log name of course
   console.log(course.name);
 
+  // log whole list of students
+  console.log(course.students);
+
+  // log first student's information
+  console.log(course.students[0]);
+
   // log first student's id
   console.log(course.students[0].id);
 
