@@ -9,7 +9,7 @@ $(document).ready(function(){
   // log whole list of students
   console.log(course.students);
 
-  // log first student's information
+  // log all of first student's information
   console.log(course.students[0]);
 
   // log first student's id
@@ -27,18 +27,24 @@ $(document).ready(function(){
   	console.log(student.gitHub);
   });
 
+    // build a GitHub link from a single student's information
 	function buildGitHubLink(singleStudent){
-		return '<a href="' + singleStudent.gitHub + 
+		return '<li><a href="' + singleStudent.gitHub + 
 			'">' + singleStudent.firstName + ' ' + 
-			singleStudent.lastName + '</a>';
+			singleStudent.lastName + '</a></li>';
 	}
 
+	// add github links to the page for all students
 	function renderGitHubLinks(allStudents){
 		allStudents.forEach(function addStudentToPage(student){
 			var gitHubLink = buildGitHubLink(student);
 			$studentList.append(gitHubLink);
 		});
+
+		// one line bonus version:
+		// $studentList.append(allStudents.map(buildGitHubLink).join(''));
 	}
+
 
   var $studentList = $('.student-list');
   renderGitHubLinks(course['students']);
@@ -52,6 +58,11 @@ var course = {
 			firstName: "Adam",
 			lastName: "nnnnnnnnnn",
 			gitHub: "annnnnnńn"
+		},
+		{
+			firstName: "b",
+			lastName: "bb",
+			gitHub: "bbbbbb"
 		}
 	]
 }
