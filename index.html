@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Blank</title>
+    <title>Student GitHub Accounts</title>
 
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -31,7 +31,7 @@
             <script id="student-li-template" type="text/x-handlebars-template">
               {{#each students}}
                 <li class="list-group-item">
-                  <a href="{{github_username}}"><strong>{{first_name}} {{last_name}}</strong></a>
+                  <a href="https://www.github.com/{{github_username}}" target="_blank"><strong>{{first_name}} {{last_name}}</strong></a>
                 </li>
               {{/each}}
             </script>
