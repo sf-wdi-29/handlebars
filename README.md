@@ -186,7 +186,7 @@ We'll use the [HTML strings lab](https://github.com/SF-WDI-LABS/html_strings) as
     // ...
 
     // pass in data to render in the template
-    var trackHtml = template({ books: data });
+    var trackHtml = template({ book: data });
   }
   ```
 
