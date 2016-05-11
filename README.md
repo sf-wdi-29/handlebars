@@ -50,7 +50,7 @@ Market: SF
 
 * Maximize code reusability and maintainability.
 
-  * If you need to change your HTML structure for elements you're creating and displaying (e.g. adding an additional class name to your Spotify tracks), all you have to do is change the template!
+  * If you need to change your HTML structure for elements you're creating and displaying (e.g. adding an additional class name to your Books), all you have to do is change the template!
 
 ## A Helpful Metaphor
 
@@ -107,7 +107,7 @@ We'll use the [HTML strings lab](https://github.com/SF-WDI-LABS/html_strings) as
 
 ## General Handlebars Setup Steps
 
-**with spotify examples!**
+**with `http://daretoexplore.herokuapp.com/books` examples**
 
 1. Add the Handlebars CDN to your `index.html` (remember you can go to <a href="https://cdnjs.com">cdnjs</a> to search for CDNs). Make sure to require Handlebars before your custom script file.
 
@@ -153,9 +153,9 @@ We'll use the [HTML strings lab](https://github.com/SF-WDI-LABS/html_strings) as
             <div id="results">
 
               <!-- handlebars template -->
-              <script id="tracks-template" type="text/x-handlebars-template">
-                {{#each tracks}}
-                  <p><strong>{{name}}</strong> by {{artists.[0].name}}</p>
+              <script id="books-template" type="text/x-handlebars-template">
+                {{#each book}}
+                  <p><strong>{{title}}</strong> | by {{author}}</p>
                 {{/each}}
               </script>
 
@@ -166,15 +166,12 @@ We'll use the [HTML strings lab](https://github.com/SF-WDI-LABS/html_strings) as
     </body>
     ```
 
-
-    *Note: When using an array in a Handlebars template, like in the example above, we need an extra `.` to access a value from inside it by index (this syntax is specific to Handlebars)*. _So `{{arr.[0]}}` gives us the first value from the array -- in Handlebars **only**_.
-
 4. Compile your template in `app.js`. Handlebars has a function called `Handlebars.compile(source)`. The source it takes in is the html from inside your template script. Handlebars' `compile` function returns a function, which we'll save to a variable called `template`. This isn't a special variable name; it just reminds us what the function does.
 
 
   ```js
   // compile handlebars template
-  var source = $('#tracks-template').html();
+  var source = $('#books-template').html();
   var template = Handlebars.compile(source);
   ```
 
@@ -183,17 +180,13 @@ We'll use the [HTML strings lab](https://github.com/SF-WDI-LABS/html_strings) as
   ```js
 
   // this is the success handler for an AJAX call
-  function renderSpotifyData(json) {
-    // track results are in an array called `items`
-    // which is nested in the `tracks` object,
-    // which is inside our AJAX response json
-    var trackResults = json.tracks.items;
-    console.log(trackResults);
+  function renderBookData(data) {
+    console.log(data);
 
     // ...
 
     // pass in data to render in the template
-    var trackHtml = template({ tracks: trackResults });
+    var trackHtml = template({ books: data });
   }
   ```
 
@@ -202,25 +195,21 @@ We'll use the [HTML strings lab](https://github.com/SF-WDI-LABS/html_strings) as
 
   ```js
 
-  function renderSpotifyData(data) {
+  function renderBookData(data) {
     // track results are in an array called `items`
-    // which is nested in the `tracks` object
-    var trackResults = data.tracks.items;
-    console.log(trackResults);
+    // which is nested in the `books` object
+    var bookResults = data.books.items;
+    console.log(bookResults);
 
     // ...
 
     // pass in data to render in the template
-    var trackHtml = template({ tracks: trackResults });
+    var trackHtml = template({ books: bookResults });
 
     // append html to the view
     $results.append(trackHtml);
   }
   ```
-
-## Resources
-
-
 
 ## Independent Practice
 You will refine the skills covered in this workshop in the labs this afternoon.
@@ -233,3 +222,4 @@ You will refine the skills covered in this workshop in the labs this afternoon.
 
 ## Additional Resources
 - [Handlebars.js](http://handlebarsjs.com)
+- FYI Handlebars is actually built **on top of** another simpler templating engine, called [Mustache.js](https://github.com/janl/mustache.js).
