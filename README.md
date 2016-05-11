@@ -1,10 +1,30 @@
-# <img src="https://cloud.githubusercontent.com/assets/7833470/10423298/ea833a68-7079-11e5-84f8-0a925ab96893.png" width="60"> Handlebars Templating
+<!--
+Creator: <Name>
+Market: SF
+-->
 
-| Objectives |
-| :--- |
-| Add the Handlebars.js library to your projects |
-| Create and compile a Handlebars template |
-| Use Handlebars templating to display data from an AJAX call on your HTML page |
+![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
+
+# Handlebars Templating
+
+## Why is this important?
+*This workshop is important because:*
+- Front End Templating allows for dynamic HTML views without messily concatenating HTML strings.
+- Helps separate the business logic from the presentation logic
+- Handlebars is one of the most popular front end templating engines
+
+## What are the objectives?
+*After this workshop, developers will be able to:*
+
+- Add the Handlebars.js library to your projects
+- Create and compile a Handlebars template
+- Use Handlebars templating to display data from an AJAX call on your HTML page
+
+## Where should we be now?
+*Before this workshop, developers should already be able to:*
+
+- Create dynamic web pages with HTML, JS, and CSS
+- Use a CDN to pull in an external library
 
 ## What is a template?
 
@@ -36,12 +56,17 @@
 
 Think of a **template** as a *mold*, the **data** passed in as *plastic* poured in, and the resulting html string that is generated as a *cast*.
 
-<img src="http://ecx.images-amazon.com/images/I/81GytL7BBoL._SY355_.jpg" alt="novelty cake tin - bug shaped cakes" width="200">
+<figure>
+  <img src="http://ecx.images-amazon.com/images/I/81GytL7BBoL._SY355_.jpg" alt="novelty cake tin - bug shaped cakes">
+  <br>
+  <br>
+  <figcaption>A template is like a mold</figcaption>
+</figure>
 
 
 ## Explore Handlebars
 
-We'll use the [HTML strings lab](https://github.com/SF-WDI-LABS/html_strings) as our starting point. Check out the `handelbars` branch.
+We'll use the [HTML strings lab](https://github.com/SF-WDI-LABS/html_strings) as our starting point. Check out the `solution` branch.
 
 ### What is happening in `index.html`?
 
@@ -193,12 +218,18 @@ We'll use the [HTML strings lab](https://github.com/SF-WDI-LABS/html_strings) as
   }
   ```
 
-## Challenges
-
-* Refactor your Spotify Search app to use Handlebars templating. Feel free to pull down the `solution` branch if you want to start with fresh code.
-
-
-
 ## Resources
 
-* <a href="http://handlebarsjs.com" target="_blank">Handlebars.js</a>
+
+
+## Independent Practice
+You will refine the skills covered in this workshop in the labs this afternoon.
+
+## Closing Thoughts
+- Templating is used to mold data into the HTML we want it to be displayed in
+- It can be done on the front end or back end, as we will learn later in the program.
+- You should know what templating is for and how to implement it in a strait forward use case.
+- You should start to get the idea of what the use cases are for templating.
+
+## Additional Resources
+- [Handlebars.js](http://handlebarsjs.com)
